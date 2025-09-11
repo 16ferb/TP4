@@ -10,14 +10,14 @@ public class Banco{
         this.setNombre(p_nombre);
         this.setLocalidad(p_localidad);
         this.setNroSucursal(p_nroSucursal);
-        this.setEmpleado(new ArrayList<>(p_empleado));
+        this.setEmpleados(new ArrayList<>(p_empleado));
     }
     
     public Banco(String p_nombre, Localidad p_localidad, int p_nroSucursal, Empleado p_empleados){
         this.setNombre(p_nombre);
         this.setLocalidad(p_localidad);
         this.setNroSucursal(p_nroSucursal);
-        this.setEmpleado(new ArrayList<>());
+        this.setEmpleados(new ArrayList<>());
         this.agregarEmpleado(p_empleados);
     }
     
@@ -45,20 +45,25 @@ public class Banco{
         return this.localidad;
     }
     
-    private void setEmpleado(ArrayList<Empleado> p_empleados){
+    private void setEmpleados(ArrayList<Empleado> p_empleados){
         this.empleados = p_empleados;
     }
     
-    public ArrayList<Empleado> getEmpleado(){
+    public ArrayList<Empleado> getEmpleados(){
         return this.empleados;
     }
     
     public boolean agregarEmpleado(Empleado p_empleado){
-        return this.getEmpleado().add(p_empleado);
+        return this.getEmpleados().add(p_empleado);
     }
     
     public boolean quitarEmpleado(Empleado p_empleado){
-        return this.getEmpleado().remove(p_empleado);
+        if(this.getEmpleados().size() > 1){
+            return this.getEmpleados().remove(p_empleado);
+        } else {
+            System.out.println("**No se puede quitar el ultimo empleado**");
+            return false;
+        }
     }
     
     public void listarSueldos(){
@@ -79,8 +84,8 @@ public class Banco{
     
     public void mostrar(){
         System.out.println("Banco: " + this.getNombre() + "\tSucursal: " + this.getNroSucursal());
-        System.out.println("Localidad: " + getLocalidad().getNombre() + "\tProvincia: " + getLocalidad().getProvincia());
+        System.out.println("Localidad: " + getLocalidad().getNombre() + "\tProvincia: " + getLocalidad().getProvincia() + "\n");
         this.listarSueldos();
-        System.out.println("\nTotal a Pagar------------------------- $" + this.sueldoAPagar());
+        System.out.println("\nTotal a Pagar------------------------- $" + this.sueldoAPagar() + "\n");
     }
 }

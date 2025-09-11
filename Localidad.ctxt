@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Localidad
+comment0.text=\r\n\ Permite\ conocer\ donde\ nacio\ y\ donde\ vive\ el\ paciente\r\n\ @author\ Gonzalo\ Biancardi\r\n\ @version\ 1.0\ -\ 06/09/2025\r\n
+comment1.params=p_nombre\ p_provincia
+comment1.target=Localidad(java.lang.String,\ java.lang.String)
+comment1.text=\r\n\ Constructor\ con\ 2\ parametros\r\n\ @param\ p_nombre\ recibe\ la\ ciudad\ donde\ nacio\ el\ paciente\r\n\ @param\ p_provincia\ recibe\ la\ provincia\ donde\ vive\ el\ paciente\r\n
+comment2.params=p_nombre
+comment2.target=void\ setNombre(java.lang.String)
+comment2.text=\r\n\ Asigna\ p_nombre\ a\ la\ ciudad\ donde\ nacio\ el\ paciente\r\n\ @param\ p_nombre\r\n\ @return\ no\ devuelve\ ningun\ valor\r\n
+comment3.params=
+comment3.target=java.lang.String\ getNombre()
+comment3.text=\r\n\ Devuelve\ la\ ciudad\ donde\ nacio\ el\ paciente\r\n\ @param\ no\ recibe\ ningun\ parametro\r\n\ @return\ un\ valor\ de\ tipo\ String\r\n
+comment4.params=p_provincia
+comment4.target=void\ setProvincia(java.lang.String)
+comment4.text=\r\n\ Asigna\ p_provincia\ a\ la\ provincia\ donde\ vive\ el\ paciente\r\n\ @param\ p_provincia\r\n\ @return\ no\ devuelve\ ningun\ valor\r\n
+comment5.params=
+comment5.target=java.lang.String\ getProvincia()
+comment5.text=\r\n\ Devuelve\ la\ provincia\ donde\ vive\ el\ paciente\r\n\ @param\ no\ recibe\ ningun\ parametro\r\n\ @return\ un\ valor\ de\ tipo\ String\r\n
+comment6.params=
+comment6.target=java.lang.String\ mostrar()
+comment6.text=\r\n\ Muestra\ por\ pantalla\ la\ ciudad\ y\ provincia\ del\ paciente\r\n\ @param\ no\ recibe\ ningun\ parametro\r\n\ @return\ un\ valor\ de\ tipo\ String\r\n
+numComments=7

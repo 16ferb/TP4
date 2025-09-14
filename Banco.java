@@ -117,12 +117,10 @@ public class Banco{
     }
     
     public void listarCuentasConSaldoCero(){
-        int totalCuentasSaldoCero = 0;
         for(int i=0; i < cuentasBancarias.size(); i++){
             CuentaBancaria unaCuenta = cuentasBancarias.get(i);
             if(unaCuenta.getSaldo() == 0){
                 System.out.println(unaCuenta.getNroCuenta() + "\t" + unaCuenta.getTitular().nomYApe());
-                totalCuentasSaldoCero += 1;
             }
         }
     }
@@ -154,9 +152,9 @@ public class Banco{
         System.out.println("***********************************************************************");
         System.out.println("RESUMEN DE CUENTAS BANCARIAS");
         System.out.println("***********************************************************************");
-        System.out.println("Numero total de Cuentas Bancarias: ");
+        System.out.println("Numero total de Cuentas Bancarias: " + this.getCuentasBancarias().size());
         System.out.println("Cuentas activas: " + this.cuentasSaldoActivo());
-        System.out.println("Cuentas saldo cero: ");
+        System.out.println("Cuentas saldo cero: " + (this.getCuentasBancarias().size() - this.cuentasSaldoActivo()));
         System.out.println("------------------------------------------------------------------------");
         System.out.println("Cuentas sin saldo:");
         System.out.println("---Cuenta------------------Apellido y Nombre----------------------------");

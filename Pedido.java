@@ -66,20 +66,24 @@ public class Pedido{
         }
         
         public boolean quitarProducto(Producto p_producto){
-            return this.getProductos().remove(p_producto);
+            if(this.getProductos().size() > 1){
+                return this.getProductos().remove(p_producto);
+            } else {
+                return false;
+            }
         }
         
         public void mostrarPedido(){
             SimpleDateFormat formatoFecha = new SimpleDateFormat("dd 'de' MMMM 'de' yyyy");
             String fechaFormateada = formatoFecha.format(this.fecha.getTime());
-            System.out.println("***** Detalle del pedido ***** Fecha: " + fechaFormateada);
+            System.out.println("\n***** Detalle del pedido ***** Fecha: " + fechaFormateada);
             System.out.println("Producto\t Precio Lista\t Precio Contado");
             System.out.println("---------------------------------------------");
             for(Object obj : this.productos){
                 Producto producto = (Producto) obj;
-                System.out.println(producto.getDescripcion() + "\t" + producto.precioLista() + "\t" + producto.precioContado());
+                System.out.println(producto.getDescripcion() + "\t" + producto.precioLista() + "\t\t" + producto.precioContado());
             }
             System.out.println("-----------------------------------------------");
-            System.out.println("*** Total ----- " + this.totalFinanciado() + "\t" + this.totalAlContado());
+            System.out.println("*** Total ----- " + this.totalFinanciado() + "\t\t" + this.totalAlContado());
         }
 }
